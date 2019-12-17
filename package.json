@@ -8,12 +8,13 @@
   "scripts": {
     "start": "electron .",
     "build": "next build renderer && next export renderer -o build/next/",
-    "dist": "npm run build && electron-builder && npm run clean",
+    "dist": "npm run build && electron-builder -wml && npm run clean",
     "semantic:build": "cd .semantic && gulp build-css build-assets",
     "semantic:watch": "cd .semantic && npm run semantic:build && gulp watch",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "clean": "rm -rf build/next renderer/.next"
+    "clean": "rm -rf build/next renderer/.next",
+    "build-mac": "npm run build && electron-builder -m"
   },
   "dependencies": {
     "base64-img": "^1.0.4",

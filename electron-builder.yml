@@ -5,6 +5,8 @@
 
 asar: true
 
+appId: "com.abya.abya-client"
+
 files:
   - "main"
   - "build/next"
@@ -13,6 +15,16 @@ directories:
   output: "build/dist"
 
 mac:
-  icon: "renderer/icon.icns"
+  category: "public.app-category.games"
+  icon: "build/logo.icns"
+  target:
+    - target: "dir"
+win:
+  # icon: "build/logo.ico" #Comented becouse must be at least 256x256
+  target:
+    - target: "dir"
+linux:
+  category: "Game"
+  icon: "build/logo.png"
   target:
     - target: "dir"
