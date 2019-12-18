@@ -1,6 +1,6 @@
 {
   "name": "software-vault-2",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Manage your software serial keys",
   "author": "Martín M.",
   "license": "MIT",
@@ -9,6 +9,7 @@
     "start": "electron .",
     "build": "next build renderer && next export renderer -o build/next/",
     "dist": "npm run build && electron-builder -wml && npm run clean",
+    "release": "npm run build && electron-builder -m --publish 'onTagOrDraft'",
     "semantic:build": "cd .semantic && gulp build-css build-assets",
     "semantic:watch": "cd .semantic && npm run semantic:build && gulp watch",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
@@ -16,6 +17,13 @@
     "clean": "rm -rf build/next renderer/.next",
     "build-mac": "npm run build && electron-builder -m"
   },
+  "repository": "https://github.com/peretch/software-vault-2",
+  "homepage": "https://github.com/peretch/software-vault-2",
+  "keywords": [
+    "Electron",
+    "auto update",
+    "electron-builder"
+  ],
   "dependencies": {
     "base64-img": "^1.0.4",
     "electron-is-dev": "^1.1.0",
@@ -51,5 +59,23 @@
     "semantic-ui-react": "^0.88.2",
     "styled-components": "^4.4.1",
     "url-loader": "^3.0.0"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.abya.abya-client",
+    "files": [
+      "main",
+      "build/next"
+    ],
+    "directories": {
+      "output": "build/dist"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "peretch",
+        "token": "52578d534e2fa94eb7d02d23d10e0abdcb81efb8"
+      }
+    ]
   }
 }

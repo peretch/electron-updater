@@ -7,6 +7,11 @@ asar: true
 
 appId: "com.abya.abya-client"
 
+publish:
+  - provider: "github"
+  - token: "0521aebd83028f3802e90ff8e92f96897222412e"
+  - repo: "https://github.com/peretch/software-vault-2"
+
 files:
   - "main"
   - "build/next"
@@ -19,6 +24,7 @@ mac:
   icon: "build/logo.icns"
   target:
     - target: "dir"
+    
 win:
   # icon: "build/logo.ico" #Comented becouse must be at least 256x256
   target:
