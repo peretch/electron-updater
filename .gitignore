@@ -98,3 +98,6 @@ public/
 # End of https://www.gitignore.io/api/node
 
 dist/
+
+# Directory for saving certs and passwords
+private
