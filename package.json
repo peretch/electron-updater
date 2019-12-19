@@ -1,5 +1,5 @@
 {
-  "name": "software-vault-2",
+  "name": "electron-updater",
   "version": "1.0.0",
   "description": "Manage your software serial keys",
   "author": "Martín M.",
@@ -17,8 +17,8 @@
     "clean": "rm -rf build/next renderer/.next",
     "build-mac": "npm run build && electron-builder -m"
   },
-  "repository": "https://github.com/peretch/software-vault-2",
-  "homepage": "https://github.com/peretch/software-vault-2",
+  "repository": "https://github.com/peretch/electron-updater",
+  "homepage": "https://github.com/peretch/electron-updater",
   "keywords": [
     "Electron",
     "auto update",

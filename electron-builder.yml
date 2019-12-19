@@ -1,5 +1,5 @@
-#productName: "software-vault-2"
-#appId: "dev.skydiver.software-vault-2"
+#productName: "electron-updater"
+#appId: "dev.skydiver.electron-updater"
 
 #electronVersion: "6.0.10"
 
@@ -10,7 +10,7 @@ appId: "com.abya.abya-client"
 publish:
   - provider: "github"
   - token: "0521aebd83028f3802e90ff8e92f96897222412e"
-  - repo: "https://github.com/peretch/software-vault-2"
+  - repo: "https://github.com/peretch/electron-updater"
 
 files:
   - "main"
