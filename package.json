@@ -73,8 +73,7 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "peretch",
-        "token": "52578d534e2fa94eb7d02d23d10e0abdcb81efb8"
+        "owner": "peretch"
       }
     ]
   }
