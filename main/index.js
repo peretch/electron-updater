@@ -5,6 +5,7 @@ const { format } = require('url');
 // Packages
 const { BrowserWindow, app, ipcMain } = require('electron');
 const prepareNext = require('electron-next');
+const updater = require('./updater');
 
 const windowStateKeeper = require('electron-window-state');
 const isDev = require('electron-is-dev');
@@ -21,6 +22,11 @@ let mainWindow;
 
 // Prepare the renderer once the app is ready
 const createWindow = async () => {
+
+  // Check for updates
+  setTimeout( updater, 3000 );
+
+
   if (mainWindow === undefined) {
     await prepareNext('./renderer');
   }

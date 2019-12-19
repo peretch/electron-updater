@@ -1,6 +1,6 @@
 {
-  "name": "electron-updater",
-  "version": "1.0.0",
+  "name": "electron-updater-example",
+  "version": "0.9.0",
   "description": "Manage your software serial keys",
   "author": "Martín M.",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "electron .",
     "build": "next build renderer && next export renderer -o build/next/",
-    "dist": "npm run build && electron-builder -wml && npm run clean",
+    "dist": "npm run build && electron-builder -m && npm run clean",
     "release": "npm run build && electron-builder -m --publish 'onTagOrDraft'",
     "semantic:build": "cd .semantic && gulp build-css build-assets",
     "semantic:watch": "cd .semantic && npm run semantic:build && gulp watch",
@@ -17,8 +17,8 @@
     "clean": "rm -rf build/next renderer/.next",
     "build-mac": "npm run build && electron-builder -m"
   },
-  "repository": "https://github.com/peretch/electron-updater",
-  "homepage": "https://github.com/peretch/electron-updater",
+  "repository": "https://github.com/peretch/electron-updater-example",
+  "homepage": "https://github.com/peretch/electron-updater-example",
   "keywords": [
     "Electron",
     "auto update",
@@ -27,15 +27,17 @@
   "dependencies": {
     "base64-img": "^1.0.4",
     "electron-is-dev": "^1.1.0",
+    "electron-log": "^4.0.0",
     "electron-next": "^3.1.5",
     "electron-serve": "^0.4.1",
     "electron-store": "^5.1.0",
+    "electron-updater": "^4.2.0",
     "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
     "@zeit/next-css": "^1.0.1",
     "babel-eslint": "^10.0.3",
-    "electron": "^7.1.5",
+    "electron": "^6.1.6",
     "electron-builder": "^21.2.0",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
