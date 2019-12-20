@@ -24,7 +24,7 @@ let mainWindow;
 const createWindow = async () => {
 
   // Check for updates
-  setTimeout( updater, 3000 );
+  setTimeout( updater, 1500 );
 
 
   if (mainWindow === undefined) {
