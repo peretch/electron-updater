@@ -102,3 +102,7 @@ dist/
 
 # Directory for saving certs and passwords
 private
+
+# OS generated files #
+*.DS_Store
+*.DS_Store?

@@ -4,7 +4,7 @@ const { dialog } = require('electron');
 
 // Configure log debugging
 autoUpdater.logger = require("electron-log")
-autoUpdater.logger.transports.file.level = "info"
+autoUpdater.logger.transports.file.level = "verbose"
 
 // Disable auto download of updates
 autoUpdater.autoDownload = false;

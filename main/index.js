@@ -57,6 +57,8 @@ const createWindow = async () => {
   // Remember window state
   mainWindowState.manage(mainWindow);
 
+  let currentSession = mainWindow.webContents.session;
+
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
     mainWindow = null;

@@ -1,21 +1,25 @@
 {
   "name": "electron-updater-example",
-  "version": "0.9.0",
+  "version": "1.0.2",
   "description": "Manage your software serial keys",
   "author": "Martín M.",
   "license": "MIT",
   "main": "main/index.js",
   "scripts": {
     "start": "electron .",
+    "clean": "rm -rf build/next renderer/.next",
     "build": "next build renderer && next export renderer -o build/next/",
-    "dist": "npm run build && electron-builder -m && npm run clean",
-    "release": "npm run build && electron-builder -m --publish 'onTagOrDraft'",
     "semantic:build": "cd .semantic && gulp build-css build-assets",
     "semantic:watch": "cd .semantic && npm run semantic:build && gulp watch",
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "clean": "rm -rf build/next renderer/.next",
-    "build-mac": "npm run build && electron-builder -m"
+    "build-mac": "npm run build && electron-builder -m && npm run clean",
+    "build-win": "npm run build && electron-builder -w && npm run clean",
+    "build-linux": "npm run build && electron-builder -l && npm run clean",
+    "release-mac": "npm run build && electron-builder -m --publish 'onTagOrDraft'",
+    "release-win": "npm run build && electron-builder -w --publish 'onTagOrDraft'",
+    "release-linux": "npm run build && electron-builder -l --publish 'onTagOrDraft'",
+    "win-cerrt": "electron-builder create-self-signed-cert -p peretch"
   },
   "repository": "https://github.com/peretch/electron-updater-example",
   "homepage": "https://github.com/peretch/electron-updater-example",
@@ -32,7 +36,8 @@
     "electron-serve": "^0.4.1",
     "electron-store": "^5.1.0",
     "electron-updater": "^4.2.0",
-    "electron-window-state": "^5.0.3"
+    "electron-window-state": "^5.0.3",
+    "is-online": "^8.2.1"
   },
   "devDependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -77,6 +82,10 @@
         "provider": "github",
         "owner": "peretch"
       }
-    ]
+    ],
+    "win": {
+      "target": "zip",
+      "certificateFile": "private/cert.p12"
+    }
   }
 }
