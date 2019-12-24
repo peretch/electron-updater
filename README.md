@@ -16,7 +16,7 @@ This project is seted to work in MacOS, using your own develop certification. Fo
 
 
 ## Build
-1. `npm run dist`
+1. `CSC_KEY_PASSWORD={key_password} npm run dist` (You have to place your cert in 'private/' and change value in package.json)
 
 ## Publish new release
 1. Create a new release. 
