@@ -19,7 +19,7 @@
     "release-mac": "npm run build && electron-builder -m --publish 'onTagOrDraft'",
     "release-win": "npm run build && electron-builder -w --publish 'onTagOrDraft'",
     "release-linux": "npm run build && electron-builder -l --publish 'onTagOrDraft'",
-    "win-cerrt": "electron-builder create-self-signed-cert -p peretch"
+    "win-cert": "electron-builder create-self-signed-cert -p peretch"
   },
   "repository": "https://github.com/peretch/electron-updater-example",
   "homepage": "https://github.com/peretch/electron-updater-example",
