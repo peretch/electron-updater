@@ -85,7 +85,9 @@
     ],
     "win": {
       "target": "zip",
-      "certificateFile": "private/cert.p12"
+      "certificateFile": "private/cert.p12",
+      "certificatePassword": "",
+      "publisherName": "peretch"
     }
   }
 }
